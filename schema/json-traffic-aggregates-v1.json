@@ -141,7 +141,6 @@
                 "description": "The datetime of the peak",
                 "format": "date-time"
             }
-          }
         }
       }
     }
