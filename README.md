@@ -58,8 +58,8 @@ from the timeseries data.
         "sources": {
             "<ixf_ixid>": {
                 "url": "https://...",
-                "title": "IXP LAN 1",
-                "aggregate_interval": 300,
+                "title": "IXP LAN 1 (1 Day)",
+                "aggregate_interval": 86400,
             },
         }, 
         "statistics": {
