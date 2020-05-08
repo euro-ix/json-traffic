@@ -12,23 +12,40 @@ Knowing the interval, we can check if the samples have any missing data.
 
 The sources should be identified by their ixf_ixid and should be unique.
 
+The samples arn n-tuples of
+
+  - `timestamp` (ISO 8601)
+  - `packets_in`
+  - `packets_out`
+  - `octets_in`
+  - `octets_out`
+
+
 ### Example
-{
-    "version": "1.0",
-    "created_at": "2001-10-23T23:30:12Z",
-    "next_update_at":  "2001-10-23T23:45:12Z", 
-    "sources": {
-        "<ixf_ixid>": {
-            "url": "https://...",
-            "title": "IX LAN 1",
-            "aggregate_interval": 300,
-        },
-    }, 
-    "samples": {
-        "<ixf_ixid>": [
-            ["2001-10-23T23:42:10Z", 23, 42, 12897,  481],
-        ]
+    {
+        "version": "1.0",
+        "created_at": "2001-10-23T23:30:12Z",
+        "next_update_at":  "2001-10-23T23:45:12Z", 
+        "sources": {
+            "<ixf_ixid>": {
+                "url": "https://...",
+                "title": "IX LAN 1",
+                "aggregate_interval": 300,
+            },
+        }, 
+        "samples": {
+            "<ixf_ixid>": [
+                ["2001-10-23T23:42:10Z", 23, 42, 12897,  481],
+            ]
+        }
     }
-}
+
+### Schema
+
+... link ...
+
+## Aggregate Data
+
+
 
 
