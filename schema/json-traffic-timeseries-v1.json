@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "IXP Statistics Timeseries Schema",
+  "description": "A JSON schema representing the timeseries traffic at an IXP",
+  "type": "object",
+  "required": [
+    "version",
+    "created_at",
+    "next_update_at",
+    "sources",
+    "samples"
+  ],
+  "properties": {
+    "version": {
+      "title": "Schema Version",
+      "description": "Version number of the schema; this is not the version of the file within an IXP; but the schema version",
+      "type": "string"
+    },
+    "created_at": {
+      "title": "Datetime of export",
+      "description": "Datetime (ISO 8601) of when the data was exported",
+      "type": "string",
+      "format": "date-time"
+    },
+    "next_update_at": {
+      "title": "Datetime of next export",
+      "description": "Datetime (ISO 8601) of the next time when the data will be exported",
+      "type": "string",
+      "format": "date-time"
+    },
+    "sources": {
+        "title": "Statistic Sources",
+        "description": "A hash of sources, with ixf_ixid as the key",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": {
+            "type": "object",
+            "required": [
+                "title",
+                "url",
+                "aggregate_interval"
+            ],
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "title": "URL of the IXP's statistics page",
+                    "description": "Url of the IXP's own statistics page"
+                },
+                "title": {
+                    "type": "string",
+                    "title": "Title / Display name",
+                    "description": "The title or display name of the series"
+                },
+                "aggregate_interval": {
+                    "type": "integer",
+                    "title": "Aggregate Interval",
+                    "description": "Width of the aggregate window between samples in seconds."
+                }
+            }
+        }
+    },
+    "samples": {
+      "description": "A collection of samples",
+      "type": "object",
+      "properties": {},
+      "additionalProperties": {
+        "type": "array",
+        "items": [
+          {
+            "description": "Datetime of the sample",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "description": "Packets in",
+            "type": "integer"
+          },
+          {
+            "description": "Packets out",
+            "type": "integer"
+          },
+          {
+            "description": "Octets in",
+            "type": "integer"
+          },
+          {
+            "description": "Octets out",
+            "type": "integer"
+          }
+        ]
+      }
+    }
+  }
+}
