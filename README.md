@@ -8,7 +8,7 @@ aggregated and timeseries data.
 
 Timeseries data of traffic is a list of samples with a timestamp.
 The sampled data is aggregated over a given window (`aggregate_interval` seconds).
-Knowing the interval, we can check if the samples have any missing data.
+Knowing the interval, we can check the integrity of the series.
 
 The sources should be identified by their ixf_ixid and should be unique.
 
