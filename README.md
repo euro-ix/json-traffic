@@ -42,7 +42,7 @@ The samples arn n-tuples of
 
 ### Schema
 
-... link ...
+[schema/json-traffic-timeseries-v1.json](schema/json-traffic-timeseries-v1.json)
 
 ## Aggregate Data
 
