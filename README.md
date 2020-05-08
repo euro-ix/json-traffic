@@ -81,4 +81,7 @@ from the timeseries data.
         }
     }
 
+### Schema
+
+[schema/json-traffic-aggregated-v1.json](schema/json-traffic-aggregated-v1.json)
 
