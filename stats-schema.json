@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "IXP Statistics Schema",
+  "description": "A JSON schema representing the traffic at an IXP",
+  "type": "object",
+  "required": [
+    "version",
+    "timestamp",
+    "samples"
+  ],
+  "properties": {
+    "version": {
+      "title": "IXP Stats Schema Version",
+      "description": "Version number of the schema; this is not the version of the file within an IXP; but the schema version",
+      "type": "string"
+    },
+    "timestamp": {
+      "title": "IXP Statistiscs Schema export timestamp",
+      "description": "Timestamp of when the data was exported",
+      "type": "string",
+      "format": "date-time"
+    },
+    "samples": {
+      "description": "At least one day worth of 300s samples",
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": [
+          {
+            "description": "IX-F id of exporting IX",
+            "type": "integer"
+          },
+          {
+            "description": "timestamp in seconds since 1970-01-01",
+            "type": "integer"
+          },
+          {
+            "description": "Packets in",
+            "type": "integer"
+          },
+          {
+            "description": "Packets out",
+            "type": "integer"
+          },
+          {
+            "description": "Octets in",
+            "type": "integer"
+          },
+          {
+            "description": "Octets out",
+            "type": "integer"
+          }
+        ],
+        "minItems": 288,
+        "samplingRate": {
+          "description": "Sampling rate of samples",
+          "enum": [300, 3600, 86400]
+        }
+      }
+    }
+  }
+}
